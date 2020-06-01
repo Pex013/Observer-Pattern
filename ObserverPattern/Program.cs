@@ -1,5 +1,4 @@
 ﻿using System;
-using ObserverPattern.Interfaces;
 
 namespace ObserverPattern
 {
@@ -12,7 +11,7 @@ namespace ObserverPattern
             var maikel = new Observer("Maikel", playstation);
             var menno = new Observer("Menno", playstation);
 
-            Console.WriteLine(@"Playstation 5 current state : {0}", playstation.GetAvailability());
+            Console.WriteLine($@"Playstation 5 current state : {playstation.GetAvailability()}");
             Console.WriteLine();
             playstation.SetAvailability("Available");
             Console.Read();

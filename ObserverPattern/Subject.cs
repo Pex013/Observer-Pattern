@@ -33,23 +33,13 @@ namespace ObserverPattern
 
         public void RegisterObserver(IObserver observer)
         {
-            Console.WriteLine(@"Observer Added : {0}", ((Observer)observer).UserName);
+            Console.WriteLine($"Observer Added : {((Observer)observer).UserName}");
             _observers.Add(observer);
-        }
-
-        public void AddObserver(IObserver observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void RemoveObserver(IObserver observer)
-        {
-            _observers.Remove(observer);
         }
 
         public void NotifyObservers()
         {
-            Console.WriteLine("Product : {0}, Price : {1} is now available. So notifying all registered users.\n", ProductName, ProductPrice);
+            Console.WriteLine($"Product : {ProductName}, Price : {ProductPrice} is now available. So notifying all registered users.\n");
             foreach (var observer in _observers)
             {
                 observer.Update(Availability);
