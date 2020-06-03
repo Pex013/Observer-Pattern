@@ -3,7 +3,7 @@ using ObserverPattern.Interfaces;
 
 namespace ObserverPattern
 {
-    internal class Observer : IObserver
+    public class Observer : IObserver
     {
         public string UserName { get; set; }
 
@@ -15,7 +15,7 @@ namespace ObserverPattern
 
         public void Update(string availability)
         {
-            Console.WriteLine(@"Hello {0}, Product is now {1} on Amazon", UserName, availability);
+            Console.WriteLine($"Hello {UserName}, Product is now {availability} on bol.com");
         }
     }
 }
