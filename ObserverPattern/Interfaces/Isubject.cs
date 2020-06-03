@@ -1,6 +1,6 @@
 ﻿namespace ObserverPattern.Interfaces
 {
-    internal interface ISubject
+    public interface ISubject
     {
         string ProductName { get; }
         int ProductPrice { get; }

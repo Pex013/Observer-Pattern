@@ -3,7 +3,7 @@ using NSubstitute;
 using ObserverPattern.Interfaces;
 using Xunit;
 
-namespace ObserverPattern.UnitTest
+namespace ObserverPattern.UnitTests
 {
     public class SubjectUnitTest
     {

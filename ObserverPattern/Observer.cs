@@ -3,7 +3,7 @@ using ObserverPattern.Interfaces;
 
 namespace ObserverPattern
 {
-    internal class Observer : IObserver
+    public class Observer : IObserver
     {
         public string UserName { get; set; }
 
