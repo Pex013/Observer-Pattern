@@ -8,32 +8,31 @@ namespace ObserverPattern
     public class Subject : ISubject
     {
         private readonly List<IObserver> _observers = new List<IObserver>();
+        private string _availability;
         private string ProductName { get; }
         private int ProductPrice { get; }
-        private string Availability { get; set; }
 
-        public Subject(string productName, int productPrice, string availability)
+        public Subject(string productName, int productPrice)
         {
             ProductName = productName;
             ProductPrice = productPrice;
-            Availability = availability;
         }
 
-        public string GetAvailability()
+        public string Availability
         {
-            return Availability;
-        }
-
-        public void SetAvailability(string availability)
-        {
-            this.Availability = availability;
-            Console.WriteLine("Availability changed from Out of Stock to Available.");
-            NotifyObservers();
+            get => _availability;
+            set
+            {
+                //if (_availability == value) return;
+                _availability = value;
+                Console.WriteLine("Availability changed from Out of Stock to Available.");
+                NotifyObservers();
+            }
         }
 
         public void RegisterObserver(IObserver observer)
         {
-            Console.WriteLine($"Observer Added : {((Observer)observer).UserName}");
+            Console.WriteLine($"Observer Added : {observer.UserName}");
             _observers.Add(observer);
         }
 
