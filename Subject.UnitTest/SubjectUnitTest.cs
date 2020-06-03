@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
 using NSubstitute;
 using ObserverPattern.Interfaces;
 using Xunit;
-using Subject = ObserverPattern.Subject;
 
-namespace Subjects.UnitTest
+namespace ObserverPattern.UnitTest
 {
     public class SubjectUnitTest
     {
