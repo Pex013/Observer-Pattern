@@ -9,8 +9,8 @@ namespace ObserverPattern
     {
         private readonly List<IObserver> _observers = new List<IObserver>();
         private string _availability;
-        private string ProductName { get; }
-        private int ProductPrice { get; }
+        public string ProductName { get; }
+        public int ProductPrice { get; }
 
         public Subject(string productName, int productPrice)
         {
@@ -23,7 +23,7 @@ namespace ObserverPattern
             get => _availability;
             set
             {
-                //if (_availability == value) return;
+                if (_availability == value) return;
                 _availability = value;
                 Console.WriteLine("Availability changed from Out of Stock to Available.");
                 NotifyObservers();
